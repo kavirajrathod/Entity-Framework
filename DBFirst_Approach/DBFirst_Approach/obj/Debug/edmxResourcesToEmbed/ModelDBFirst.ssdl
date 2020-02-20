@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="Course_id" />
+    </Key>
+    <Property Name="Course_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Course_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="nchar" MaxLength="10" />
+    <Property Name="Fees" Type="money" />
+    <Property Name="eid" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="eid" />
+    </Key>
+    <Property Name="eid" Type="int" Nullable="false" />
+    <Property Name="ename" Type="varchar(max)" Nullable="false" />
+    <Property Name="designation" Type="varchar(max)" Nullable="false" />
+    <Property Name="basicsal" Type="money" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Course__eid__09A971A2">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="eid" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Course__eid__0A9D95DB">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="eid" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EmployeeDBModelStoreContainer">
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Course__eid__09A971A2" Association="Self.FK__Course__eid__09A971A2">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Course__eid__0A9D95DB" Association="Self.FK__Course__eid__0A9D95DB">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

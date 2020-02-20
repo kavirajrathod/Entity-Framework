@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExaminationSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Center">
+    <Key>
+      <PropertyRef Name="center_code" />
+    </Key>
+    <Property Name="center_code" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="center_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="center_address" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExamDetails">
+    <Key>
+      <PropertyRef Name="exam_code" />
+    </Key>
+    <Property Name="exam_code" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="exam_name" Type="varchar(max)" Nullable="false" />
+    <Property Name="exam_date" Type="date" Nullable="false" />
+    <Property Name="total_marks" Type="int" Nullable="false" />
+    <Property Name="passing_marks" Type="int" Nullable="false" />
+    <Property Name="time_duration" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="seat_number" />
+    </Key>
+    <Property Name="seat_number" Type="nchar" MaxLength="7" Nullable="false" />
+    <Property Name="marks_obtained" Type="int" Nullable="false" />
+    <Property Name="total_marks" Type="int" Nullable="false" />
+    <Property Name="percentage" Type="float" Nullable="false" />
+    <Property Name="result" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="seat_number" />
+    </Key>
+    <Property Name="seat_number" Type="nchar" MaxLength="7" Nullable="false" />
+    <Property Name="student_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="exam_date" Type="date" Nullable="false" />
+    <Property Name="exam_code" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="center_code" Type="nchar" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <Association Name="fK_cr">
+    <End Role="Center" Type="Self.Center" Multiplicity="1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Center">
+        <PropertyRef Name="center_code" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="center_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fK_ec">
+    <End Role="ExamDetails" Type="Self.ExamDetails" Multiplicity="1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExamDetails">
+        <PropertyRef Name="exam_code" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="exam_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ExaminationSystemModelStoreContainer">
+    <EntitySet Name="Center" EntityType="Self.Center" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExamDetails" EntityType="Self.ExamDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fK_cr" Association="Self.fK_cr">
+      <End Role="Center" EntitySet="Center" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="fK_ec" Association="Self.fK_ec">
+      <End Role="ExamDetails" EntitySet="ExamDetails" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

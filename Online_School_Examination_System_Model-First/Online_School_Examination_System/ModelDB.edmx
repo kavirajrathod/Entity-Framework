@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ExaminationSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Center">
+          <Key>
+            <PropertyRef Name="center_code" />
+          </Key>
+          <Property Name="center_code" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="center_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="center_address" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExamDetails">
+          <Key>
+            <PropertyRef Name="exam_code" />
+          </Key>
+          <Property Name="exam_code" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="exam_name" Type="varchar(max)" Nullable="false" />
+          <Property Name="exam_date" Type="date" Nullable="false" />
+          <Property Name="total_marks" Type="int" Nullable="false" />
+          <Property Name="passing_marks" Type="int" Nullable="false" />
+          <Property Name="time_duration" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="seat_number" />
+          </Key>
+          <Property Name="seat_number" Type="nchar" MaxLength="7" Nullable="false" />
+          <Property Name="marks_obtained" Type="int" Nullable="false" />
+          <Property Name="total_marks" Type="int" Nullable="false" />
+          <Property Name="percentage" Type="float" Nullable="false" />
+          <Property Name="result" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="seat_number" />
+          </Key>
+          <Property Name="seat_number" Type="nchar" MaxLength="7" Nullable="false" />
+          <Property Name="student_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="exam_date" Type="date" Nullable="false" />
+          <Property Name="exam_code" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="center_code" Type="nchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <Association Name="fK_cr">
+          <End Role="Center" Type="Self.Center" Multiplicity="1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Center">
+              <PropertyRef Name="center_code" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="center_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fK_ec">
+          <End Role="ExamDetails" Type="Self.ExamDetails" Multiplicity="1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExamDetails">
+              <PropertyRef Name="exam_code" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="exam_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ExaminationSystemModelStoreContainer">
+          <EntitySet Name="Center" EntityType="Self.Center" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExamDetails" EntityType="Self.ExamDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fK_cr" Association="Self.fK_cr">
+            <End Role="Center" EntitySet="Center" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="fK_ec" Association="Self.fK_ec">
+            <End Role="ExamDetails" EntitySet="ExamDetails" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ExaminationSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Center">
+          <Key>
+            <PropertyRef Name="center_code" />
+          </Key>
+          <Property Name="center_code" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="center_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="center_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Self.fK_cr" FromRole="Center" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="ExamDetail">
+          <Key>
+            <PropertyRef Name="exam_code" />
+          </Key>
+          <Property Name="exam_code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="exam_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="exam_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="total_marks" Type="Int32" Nullable="false" />
+          <Property Name="passing_marks" Type="Int32" Nullable="false" />
+          <Property Name="time_duration" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Students" Relationship="Self.fK_ec" FromRole="ExamDetails" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="seat_number" />
+          </Key>
+          <Property Name="seat_number" Type="String" MaxLength="7" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="marks_obtained" Type="Int32" Nullable="false" />
+          <Property Name="total_marks" Type="Int32" Nullable="false" />
+          <Property Name="percentage" Type="Double" Nullable="false" />
+          <Property Name="result1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="seat_number" />
+          </Key>
+          <Property Name="seat_number" Type="String" MaxLength="7" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="exam_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="exam_code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="center_code" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Center" Relationship="Self.fK_cr" FromRole="Student" ToRole="Center" />
+          <NavigationProperty Name="ExamDetail" Relationship="Self.fK_ec" FromRole="Student" ToRole="ExamDetails" />
+        </EntityType>
+        <Association Name="fK_cr">
+          <End Role="Center" Type="Self.Center" Multiplicity="1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Center">
+              <PropertyRef Name="center_code" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="center_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fK_ec">
+          <End Role="ExamDetails" Type="Self.ExamDetail" Multiplicity="1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExamDetails">
+              <PropertyRef Name="exam_code" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="exam_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ExaminationSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Centers" EntityType="Self.Center" />
+          <EntitySet Name="ExamDetails" EntityType="Self.ExamDetail" />
+          <EntitySet Name="Results" EntityType="Self.Result" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <AssociationSet Name="fK_cr" Association="Self.fK_cr">
+            <End Role="Center" EntitySet="Centers" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="fK_ec" Association="Self.fK_ec">
+            <End Role="ExamDetails" EntitySet="ExamDetails" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ExaminationSystemModelStoreContainer" CdmEntityContainer="ExaminationSystemEntities">
+          <EntitySetMapping Name="Centers">
+            <EntityTypeMapping TypeName="ExaminationSystemModel.Center">
+              <MappingFragment StoreEntitySet="Center">
+                <ScalarProperty Name="center_code" ColumnName="center_code" />
+                <ScalarProperty Name="center_name" ColumnName="center_name" />
+                <ScalarProperty Name="center_address" ColumnName="center_address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExamDetails">
+            <EntityTypeMapping TypeName="ExaminationSystemModel.ExamDetail">
+              <MappingFragment StoreEntitySet="ExamDetails">
+                <ScalarProperty Name="exam_code" ColumnName="exam_code" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="total_marks" ColumnName="total_marks" />
+                <ScalarProperty Name="passing_marks" ColumnName="passing_marks" />
+                <ScalarProperty Name="time_duration" ColumnName="time_duration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="ExaminationSystemModel.Result">
+              <MappingFragment StoreEntitySet="Result">
+                <ScalarProperty Name="seat_number" ColumnName="seat_number" />
+                <ScalarProperty Name="marks_obtained" ColumnName="marks_obtained" />
+                <ScalarProperty Name="total_marks" ColumnName="total_marks" />
+                <ScalarProperty Name="percentage" ColumnName="percentage" />
+                <ScalarProperty Name="result1" ColumnName="result" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="ExaminationSystemModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="seat_number" ColumnName="seat_number" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_code" ColumnName="exam_code" />
+                <ScalarProperty Name="center_code" ColumnName="center_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

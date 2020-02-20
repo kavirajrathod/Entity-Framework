@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\bin\Debug\Task 15 Feb 2020.exe.config
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\bin\Debug\Task 15 Feb 2020.exe
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\bin\Debug\Task 15 Feb 2020.pdb
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\bin\Debug\EntityFramework.dll
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\bin\Debug\EntityFramework.xml
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\obj\Debug\Task 15 Feb 2020.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\obj\Debug\Task 15 Feb 2020.csproj.CopyComplete
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\obj\Debug\Task 15 Feb 2020.exe
+C:\Users\Admin\source\repos\Task 15 Feb 2020\Task 15 Feb 2020\obj\Debug\Task 15 Feb 2020.pdb

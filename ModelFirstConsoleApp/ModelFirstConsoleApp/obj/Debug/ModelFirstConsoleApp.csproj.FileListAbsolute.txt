@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\bin\Debug\ModelFirstConsoleApp.exe.config
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\bin\Debug\ModelFirstConsoleApp.exe
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\bin\Debug\ModelFirstConsoleApp.pdb
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\bin\Debug\EntityFramework.dll
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\bin\Debug\EntityFramework.xml
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\obj\Debug\ModelFirstConsoleApp.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\obj\Debug\ModelFirstConsoleApp.csproj.CopyComplete
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\obj\Debug\ModelFirstConsoleApp.exe
+C:\Users\Admin\source\repos\ModelFirstConsoleApp\ModelFirstConsoleApp\obj\Debug\ModelFirstConsoleApp.pdb

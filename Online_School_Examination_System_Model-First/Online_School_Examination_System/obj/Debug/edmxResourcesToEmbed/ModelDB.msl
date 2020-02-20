@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExaminationSystemModelStoreContainer" CdmEntityContainer="ExaminationSystemEntities">
+    <EntitySetMapping Name="Centers">
+      <EntityTypeMapping TypeName="ExaminationSystemModel.Center">
+        <MappingFragment StoreEntitySet="Center">
+          <ScalarProperty Name="center_code" ColumnName="center_code" />
+          <ScalarProperty Name="center_name" ColumnName="center_name" />
+          <ScalarProperty Name="center_address" ColumnName="center_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamDetails">
+      <EntityTypeMapping TypeName="ExaminationSystemModel.ExamDetail">
+        <MappingFragment StoreEntitySet="ExamDetails">
+          <ScalarProperty Name="exam_code" ColumnName="exam_code" />
+          <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+          <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+          <ScalarProperty Name="total_marks" ColumnName="total_marks" />
+          <ScalarProperty Name="passing_marks" ColumnName="passing_marks" />
+          <ScalarProperty Name="time_duration" ColumnName="time_duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="ExaminationSystemModel.Result">
+        <MappingFragment StoreEntitySet="Result">
+          <ScalarProperty Name="seat_number" ColumnName="seat_number" />
+          <ScalarProperty Name="marks_obtained" ColumnName="marks_obtained" />
+          <ScalarProperty Name="total_marks" ColumnName="total_marks" />
+          <ScalarProperty Name="percentage" ColumnName="percentage" />
+          <ScalarProperty Name="result1" ColumnName="result" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="ExaminationSystemModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="seat_number" ColumnName="seat_number" />
+          <ScalarProperty Name="student_name" ColumnName="student_name" />
+          <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+          <ScalarProperty Name="exam_code" ColumnName="exam_code" />
+          <ScalarProperty Name="center_code" ColumnName="center_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\obj\Debug\Task_13_Feb_Entity_Code_First.exe
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\obj\Debug\Task_13_Feb_Entity_Code_First.pdb
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\obj\Debug\EF_Task_Code.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\bin\Debug\Task_13_Feb_Entity_Code_First.exe.config
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\bin\Debug\Task_13_Feb_Entity_Code_First.exe
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\bin\Debug\Task_13_Feb_Entity_Code_First.pdb
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\bin\Debug\EntityFramework.dll
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\bin\Debug\EntityFramework.xml
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\obj\Debug\EF_Task_Code.csproj.CopyComplete
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\obj\Debug\Task_13_Feb_Entity_Code_First.Migrations.createCustomer.resources
+C:\Users\Admin\source\repos\Task_13_Feb_Entity_Code_First\Task_13_Feb_Entity_Code_First\obj\Debug\EF_Task_Code.csproj.GenerateResource.cache

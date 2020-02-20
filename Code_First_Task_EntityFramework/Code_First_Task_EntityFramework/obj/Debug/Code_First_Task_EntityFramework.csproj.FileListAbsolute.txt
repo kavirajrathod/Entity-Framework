@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\bin\Debug\Code_First_Task_EntityFramework.exe.config
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\bin\Debug\Code_First_Task_EntityFramework.exe
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\bin\Debug\Code_First_Task_EntityFramework.pdb
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\bin\Debug\EntityFramework.dll
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\bin\Debug\EntityFramework.xml
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\obj\Debug\Code_First_Task_EntityFramework.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\obj\Debug\Code_First_Task_EntityFramework.csproj.CopyComplete
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\obj\Debug\Code_First_Task_EntityFramework.exe
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\obj\Debug\Code_First_Task_EntityFramework.pdb
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\obj\Debug\Code_First_Task_EntityFramework.Migrations.createCustomer.resources
+C:\Users\Admin\source\repos\Code_First_Task_EntityFramework\Code_First_Task_EntityFramework\obj\Debug\Code_First_Task_EntityFramework.csproj.GenerateResource.cache
